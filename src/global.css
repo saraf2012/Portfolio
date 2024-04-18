@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Stevie+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Basic+Sans:wght@400&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-cofo-sans-mono-vf: "CoFo Sans Mono VF";
+  --font-stevie-sans: "Stevie Sans";
+  --font-basic-sans: "Basic Sans";
+
+  /* font sizes */
+  --font-size-13xl: 32px;
+  --font-size-lgi: 19px;
+  --font-size-7xl: 26px;
+  --font-size-29xl: 48px;
+  --font-size-10xl: 29px;
+  --font-size-19xl: 38px;
+  --font-size-21xl: 40px;
+  --font-size-5xl: 24px;
+  --font-size-181xl: 200px;
+  --font-size-31xl: 50px;
+  --font-size-61xl: 80px;
+  --font-size-45xl: 64px;
+  --font-size-32xl: 51px;
+
+  /* Colors */
+  --color-gray-100: #0c0c0c;
+  --color-gray-200: rgba(255, 255, 255, 0.5);
+  --color-white: #fff;
+
+  /* Gaps */
+  --gap-26xl-1: 45.1px;
+  --gap-4xl: 23px;
+  --gap-xl: 20px;
+  --gap-28xl: 47px;
+  --gap-base: 16px;
+  --gap-mid: 17px;
+  --gap-20xl: 39px;
+  --gap-14xl-1: 33.1px;
+  --gap-186xl: 205px;
+  --gap-7xl: 26px;
+  --gap-32xl: 51px;
+  --gap-83xl: 102px;
+  --gap-lgi: 19px;
+
+  /* Paddings */
+  --padding-11xs: 2px;
+  --padding-399xl-1: 418.1px;
+  --padding-xl: 20px;
+  --padding-mini: 15px;
+  --padding-6xl: 25px;
+  --padding-253xl: 272px;
+  --padding-64xl: 83px;
+  --padding-55xl: 74px;
+  --padding-385xl: 404px;
+  --padding-21xl: 40px;
+  --padding-24xl: 43px;
+  --padding-2xl: 21px;
+  --padding-12xs: 1px;
+  --padding-8xs: 5px;
+  --padding-22xl-9: 41.9px;
+  --padding-26xl-6: 45.6px;
+  --padding-5xl: 24px;
+  --padding-11xl: 30px;
+  --padding-lg: 18px;
+  --padding-83xl: 102px;
+  --padding-47xl: 66px;
+  --padding-17xl-4: 36.4px;
+  --padding-79xl: 98px;
+  --padding-45xl: 64px;
+  --padding-23xl: 42px;
+  --padding-29xl: 48px;
+  --padding-mid: 17px;
+
+  /* Border radiuses */
+  --br-13xl: 32px;
+}

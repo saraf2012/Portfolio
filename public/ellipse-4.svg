@@ -1,0 +1,9 @@
+<svg width="279" height="279" viewBox="0 0 279 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M279 139.5C279 216.544 216.544 279 139.5 279C62.4563 279 0 216.544 0 139.5C0 62.4563 62.4563 0 139.5 0C216.544 0 279 62.4563 279 139.5Z" fill="url(#paint0_diamond_371_32462)"/>
+<defs>
+<radialGradient id="paint0_diamond_371_32462" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(139.5 139.5) rotate(89.8011) scale(144.001)">
+<stop stop-color="#D82028"/>
+<stop offset="1" stop-color="#0C0C0C"/>
+</radialGradient>
+</defs>
+</svg>
