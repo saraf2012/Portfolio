@@ -95,32 +95,29 @@
     <MonthlyMotivationLabel />
   </div>
 </template>
-<script>
-  import { defineComponent } from "vue";
+
+<script setup>
+  import { onMounted } from 'vue';
+  import { useRouter } from 'vue-router';
   import CopyrightInformation from "../components/CopyrightInformation.vue";
   import FrameComponent from "../components/FrameComponent.vue";
   import MonthlyMotivationLabel from "../components/MonthlyMotivationLabel.vue";
 
-  export default defineComponent({
-    name: "Frame",
-    components: {
-      CopyrightInformation,
-      FrameComponent,
-      MonthlyMotivationLabel,
-    },
-    methods: {
-      onPROJECTSText1Click() {
-        this.$router.push("/desktop-2");
-      },
-      onSERVICESText1Click() {
-        this.$router.push("/services");
-      },
-      onCONTACTText1Click() {
-        this.$router.push("/contact");
-      },
-    },
-  });
+  const router = useRouter();
+
+  const onPROJECTSText1Click = () => {
+    router.push("/desktop-2");
+  };
+
+  const onSERVICESText1Click = () => {
+    router.push("/services");
+  };
+
+  const onCONTACTText1Click = () => {
+    router.push("/contact");
+  };
 </script>
+
 <style module>
   .frameChild {
     align-self: stretch;
@@ -441,7 +438,11 @@
     .projectsServicesContactLinkParent {
       gap: 188px;
     }
+  ._circleShapeChild1_10rz0_258 {
+      display: none;
+    }
   }
+
   @media screen and (max-width: 750px) {
     .julietteWicz {
       font-size: var(--font-size-7xl);
@@ -459,9 +460,7 @@
       font-size: var(--font-size-7xl);
     }
 
-    .graphicDesignerGrfkContainer {
-      font-size: var(--font-size-13xl);
-    }
+  
 
     .isACreativeContainer {
       font-size: var(--font-size-13xl);
@@ -485,10 +484,19 @@
     }
 
     .rectangleParent {
-      gap: 698px;
+      gap: 0px;
+    }
+    .circleShape {
+      display: none;
+    }
+    .graphicDesigner {
+      font-size:large;
+    }
+    .graphicDesignerGrfkContainer {
+      height: auto;
     }
   }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 450px) { 
     .julietteWicz {
       font-size: var(--font-size-lgi);
     }
@@ -522,7 +530,7 @@
     }
 
     .rectangleParent {
-      gap: 349px;
+      gap: 0px;
     }
   }
 </style>

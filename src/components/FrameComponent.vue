@@ -95,14 +95,9 @@
     font-family: var(--font-basic-sans);
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 1050px) {
     .wordOfTheDayContainer {
-      font-size: var(--font-size-19xl);
-    }
-  }
-  @media screen and (max-width: 450px) {
-    .wordOfTheDayContainer {
-      font-size: var(--font-size-10xl);
+      display: none;
     }
   }
 </style>

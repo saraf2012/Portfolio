@@ -8,7 +8,7 @@
       <section :class="$style.caseStudyBox">
         <div :class="$style.caseStudySolidCompanyNaParent">
           <div :class="$style.caseStudyContainer">
-            <p :class="$style.caseStudy">Case Study - Solid  Company Name:</p>
+            <p :class="$style.caseStudy">Case Study - Solid Company Name:</p>
             <p :class="$style.solidSatchel">Solid Satchel</p>
             <p :class="$style.blankLine">&nbsp;</p>
             <p :class="$style.companyDescription">Company Description:</p>

@@ -36,14 +36,19 @@
             </div>
           </div>
         </div>
-        <div :class="$style.wrapperGroup64">
-          <img :class="$style.wrapperGroup64Child" alt="" src="/group-64.svg" 
-         onclick="window.open('https://youtu.be/3XAd0ZsG-gI', '_blank')"/>
-        </div>
+        <div
+  :class="$style.wrapperGroup64"
+  @click="openVideo"
+  @mouseover="isHovered = true"
+  @mouseleave="isHovered = false"
+  :style="{ cursor: isHovered ? 'pointer' : 'default', display: 'inline-block' }"
+>
+  <img :class="$style.wrapperGroup64Child" alt="" src="/group-64.svg" />
+</div>
       </div>
       <div :class="$style.wrapperGroup65Wrapper">
         <!-- Use <a> tag to create download link -->
-        <a href="/CVFINAL.pdf" download="CVFINAL.pdf">
+        <a :href="pdfLink" download="CVFINAL.pdf">
           <div :class="$style.wrapperGroup65">
             <img :class="$style.wrapperGroup65Child" alt="" src="/group-65.svg" />
           </div>
@@ -52,12 +57,28 @@
     </div>
   </div>
 </template> 
-<script>
-  import { defineComponent } from "vue";
 
-  export default defineComponent({
-    name: "CopyrightInformation",
-  });
+<script>
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'CopyrightInformation',
+  methods: {
+    openLink() {
+      window.open('https://youtu.be/3XAd0ZsG-gI', '_blank');
+    },
+    openVideo() {
+      window.open('https://youtu.be/3XAd0ZsG-gI', '_blank');
+    }
+  },
+  data() {
+    return {
+      image65Src: '/group-65.svg', // Initial image source for group-65
+      pdfLink: '/CVFINAL.pdf', // PDF link for download
+      isHovered: false
+    };
+  }
+});
 </script>
 <style module>  
 
@@ -87,12 +108,12 @@
   }
   .graphicDesignerLabel {
     position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
+    height: auto; /* Change height to auto to maintain aspect ratio */
+    width: 100%; /* Ensure it spans the entire width of its container */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     border-radius: var(--br-13xl);
     background: linear-gradient(
       115.45deg,
@@ -103,16 +124,19 @@
     backdrop-filter: blur(56px);
     border: 1px solid var(--color-gray-200);
     box-sizing: border-box;
-  }
-  .graphicDesignerLabelWrapper {
+    max-width: 100%; /* Ensure it doesn't exceed its container's width */
+}
+
+.graphicDesignerLabelWrapper {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100%; /* Ensure it fills its container */
+    width: 100%; /* Ensure it fills its container */
     top: 0%;
     right: 0%;
     bottom: 0%;
     left: 0%;
-  }
+}
+
   .skillsIcon {
     position: absolute;
     height: 11.75%;
@@ -248,26 +272,28 @@
     height: 100%;
   }
   .wrapperGroup64Child {
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    object-fit: contain;
-    position: absolute;
-    left: 0px;
-    top: 24px;
-    transform: scale(1.966);
-  }
-  .wrapperGroup64 {
-    position: absolute;
-    top: 566px;
-    left: 241px;
-    width: 390px;
-    height: 116px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  left: 50%;
+  top: 24px; /* Adjust the top position as needed */
+  transform: translateX(-50%) scale(1.7); /* Adjust the scale as needed */
+}
+
+.wrapperGroup64 {
+  position: relative;
+  top: 566px; /* Adjust the top position as needed */
+  left: 50%; /* Adjust the left position as needed */
+  width: 1000px;
+  height: 116px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center horizontally */
+  align-content: center;
+  display: flex;
+}
   .component3Parent {
     align-self: stretch;
     height: 685px;
@@ -278,27 +304,29 @@
     width: 100%;
     object-fit: contain;
     position: absolute;
-    left: 0px;
-    top: 24px;
-    transform: scale(1.966);
-  }
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.7);
+}
+
   .wrapperGroup65 {
-    height: 116px;
-    width: 390px;
-    position: relative;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  height: 116px;
+  width: 500px;
+  left: 47.5%;
+  transform: translateX(-50%);
+  position: absolute;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
   .wrapperGroup65Wrapper {
     align-self: stretch;
     height: 116px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: center;
-    padding: 0px var(--padding-xl);
     box-sizing: border-box;
     max-width: 100%;
   }
@@ -328,5 +356,23 @@
       padding-left: var(--padding-2xl);
       box-sizing: border-box;
     }
+    .wrapperGroup64Child .wrapperGroup65Child {
+      transform: scale(1.0);
+    }
+
+    .wrapperGroup64Child {
+    left: 50%;
+    top: 24px; /* Adjust the top position as needed */
+    transform: translateX(-50%) scale(1.0); /* Adjust the scale as needed */
+  }
+  .wrapperGroup65Child {
+    transform: translateX(-50%) scale(1.0);
+    margin-top: -100px;
+
+
+  }
+  .graphicDesignerLabel {
+    margin-top: 75px;
+  }
   }
 </style>

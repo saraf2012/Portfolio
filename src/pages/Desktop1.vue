@@ -327,7 +327,6 @@
     margin: 0;
   }
   .caseStudyContainer {
-    height: 8378px;
     width: 1295px;
     position: relative;
     display: inline-block;
